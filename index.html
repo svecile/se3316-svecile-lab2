@@ -6,14 +6,25 @@
 <script type='text/javascript' src='script.js'></script>
 </head>
 <body>
-<h1>User Information</h1>
-Name: <input type="text" id="name">
-Email:  <input type="text" id="email">
+<h1 id = "h1"> User Information</h1>
+<p id= "dataIn">Name: <input type="text" maxlength = "100" id="name">
+Email:  <input type="email" id="email">
 Year of birth: <input type="text" id="birth-year">
+<button type="button" onclick="subForm()">Submit</button>
+</p>
 <h1>Library Checkout</h1>
 <h2>Items Available:</h2>
-<ol id="available-items"></ol>
+<ol id="available-items" type="1">
+    <li>
+    <figure>
+        <a><img src="9780590341257_p0_v2_s550x406.jpg" alt="Clifford The Big Red Dog" title="Clifford The Big Red Dog"/></a>
+        <figcaption><em>Clifford The Big Red Dog</em></figcaption>
+    </figure>  
+    </li>
+    <li>The Anarchist Cookbook <img src="Anarchistcookbookdsfg.jpg"></li>
+</ol>
 <h2>Checkout List:</h2>
 <ol id="basket"></ol>
+<script type= "text/javascript" src="script.js"></script>
 </body>
 </html>
