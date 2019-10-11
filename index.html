@@ -15,16 +15,70 @@ Year of birth: <input type="text" id="birth-year">
 <h1>Library Checkout</h1>
 <h2>Items Available:</h2>
 <ol id="available-items" type="1">
-    <li>
-    <figure>
-        <a><img src="9780590341257_p0_v2_s550x406.jpg" alt="Clifford The Big Red Dog" title="Clifford The Big Red Dog"/></a>
-        <figcaption><em>Clifford The Big Red Dog</em></figcaption>
-    </figure>  
+    <li id="clif"> 
+        <figure>
+            <a><img src="9780590341257_p0_v2_s550x406.jpg" alt="Clifford The Big Red Dog" width="200" height ="250"/></a>
+            <figcaption>Clifford The Big Red Dog <button type="button" onclick="updateBasket('clif')">Add</button></figcaption>
+        </figure>  
     </li>
-    <li>The Anarchist Cookbook <img src="Anarchistcookbookdsfg.jpg"></li>
+    <li id="anarchist">
+        <figure>
+            <a><img src="Anarchistcookbookdsfg.jpg" alt="The Anarchist Cookbook" width="200" height ="250"/></a>
+            <figcaption>The Anarchist Cookbook <button type="button" onclick="updateBasket('anarchist')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="java">
+        <figure>
+            <a><img src="javascriptfordummies.jpg" alt="HTML, CSS & Javascript Mobile Devlopment for DUMMIES" width="200" height ="250"/></a>
+            <figcaption>HTML, CSS & Javascript Mobile Devlopment for DUMMIES <button type="button" onclick="updateBasket('java')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="poo">
+        <figure>
+            <a><img src="poo.jpg" alt="What's Your Poo Telling You?" width="200" height ="250"/></a>
+            <figcaption>What's Your Poo Telling You? <button type="button" onclick="updateBasket('poo')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="green">
+        <figure>
+            <a><img src="american_idiot.jpg" alt="American Idiot by Green Day" width="200" height ="200"/></a>
+            <figcaption>American Idiot by Green Day <button type="button" onclick="updateBasket('green')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="dillon">
+        <figure>
+            <a><img src="dillon-francis.jpg" alt="This Mixtape Is Fire by Dillon Francis" width="200" height ="200"/></a>
+            <figcaption>This Mixtape Is Fire by Dillon Francis <button type="button" onclick="updateBasket('dillon')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="dogman">
+        <figure>
+            <a><img src="dogman.jpg" alt="Dog Man" width="200" height ="250"/></a>
+            <figcaption>Dog Man <button type="button" onclick="updateBasket('dogman')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="captain">
+        <figure>
+            <a><img src="captainunderpants.jpg" alt="Captain Underpants" width="200" height ="250"/></a>
+            <figcaption>Captain Underpants <button type="button" onclick="updateBasket('captain')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="beaver">
+        <figure>
+            <a><img src="beaver.jpg" alt="The Beaver Brothers and The Evil Penguin" width="200" height ="250"/></a>
+            <figcaption>The Beaver Brothers and The Evil Penguin <button type="button" onclick="updateBasket('beaver')">Add</button></figcaption>
+        </figure>
+    </li>
+    <li id="owl">
+        <figure>
+            <a><img src="owl.jpg" alt="The Owl Diaries Eva's Treetop Festival" width="200" height ="250"/></a>
+            <figcaption>The Owl Diaries Eva's Treetop Festivaln <button type="button" onclick="updateBasket('owl')">Add</button></figcaption>
+        </figure>
+    </li>
 </ol>
 <h2>Checkout List:</h2>
-<ol id="basket"></ol>
+<ol id="basket">
+</ol>
 <script type= "text/javascript" src="script.js"></script>
 </body>
 </html>

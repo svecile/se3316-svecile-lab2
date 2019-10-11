@@ -31,3 +31,8 @@ function subForm(){
     var element = document.getElementById("h1")
     element.appendChild(h);
 }
+
+function updateBasket (item){
+    var node = document.getElementById(item);
+    document.getElementById("basket").appendChild(node); 
+}
