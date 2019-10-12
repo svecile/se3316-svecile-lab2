@@ -1,75 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 <title>SE 3316 - Lab 2</title>
 <meta charset="UTF-8">
-<script type='text/javascript' src='script.js'></script>
 </head>
 <body>
 <h1 id = "h1"> User Information</h1>
-<p id= "dataIn">Name: <input type="text" maxlength = "100" id="name">
+
+<p id= "dataIn">
+Name: <input type="text" maxlength = "100" id="name">
 Email:  <input type="email" id="email">
 Year of birth: <input type="text" id="birth-year">
 <button type="button" onclick="subForm()">Submit</button>
 </p>
+
 <h1>Library Checkout</h1>
 <h2>Items Available:</h2>
 <ol id="available-items" type="1">
-    <li id="clif"> 
+    <li id="clif" data-due="Due in 30 Days"> 
         <figure>
-            <a><img src="9780590341257_p0_v2_s550x406.jpg" alt="Clifford The Big Red Dog" width="200" height ="250"/></a>
+            <a><img src="clif.jpg" alt="Clifford The Big Red Dog" width="200" height ="250"/></a>
             <figcaption>Clifford The Big Red Dog <button type="button" onclick="updateBasket('clif')">Add</button></figcaption>
         </figure>  
     </li>
-    <li id="anarchist">
+    <li id="anarchist" data-due="Due in 30 Days">
         <figure>
-            <a><img src="Anarchistcookbookdsfg.jpg" alt="The Anarchist Cookbook" width="200" height ="250"/></a>
+            <a><img src="anarchist.jpg" alt="The Anarchist Cookbook" width="200" height ="250"/></a>
             <figcaption>The Anarchist Cookbook <button type="button" onclick="updateBasket('anarchist')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="java">
+    <li id="java" data-due="Due in 30 Days">
         <figure>
-            <a><img src="javascriptfordummies.jpg" alt="HTML, CSS & Javascript Mobile Devlopment for DUMMIES" width="200" height ="250"/></a>
+            <a><img src="java.jpg" alt="HTML, CSS & Javascript Mobile Devlopment for DUMMIES" width="200" height ="250"/></a>
             <figcaption>HTML, CSS & Javascript Mobile Devlopment for DUMMIES <button type="button" onclick="updateBasket('java')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="poo">
+    <li id="poo" data-due="Due in 30 Days">
         <figure>
             <a><img src="poo.jpg" alt="What's Your Poo Telling You?" width="200" height ="250"/></a>
             <figcaption>What's Your Poo Telling You? <button type="button" onclick="updateBasket('poo')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="green">
+    <li id="green" data-due="Due in 10 Days">
         <figure>
-            <a><img src="american_idiot.jpg" alt="American Idiot by Green Day" width="200" height ="200"/></a>
+            <a><img src="green.jpg" alt="American Idiot by Green Day" width="200" height ="200"/></a>
             <figcaption>American Idiot by Green Day <button type="button" onclick="updateBasket('green')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="dillon">
+    <li id="dillon" data-due="Due in 10 Days">
         <figure>
-            <a><img src="dillon-francis.jpg" alt="This Mixtape Is Fire by Dillon Francis" width="200" height ="200"/></a>
+            <a><img src="dillon.jpg" alt="This Mixtape Is Fire by Dillon Francis" width="200" height ="200"/></a>
             <figcaption>This Mixtape Is Fire by Dillon Francis <button type="button" onclick="updateBasket('dillon')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="dogman">
+    <li id="dogman" data-due="Due in 30 Days">
         <figure>
             <a><img src="dogman.jpg" alt="Dog Man" width="200" height ="250"/></a>
             <figcaption>Dog Man <button type="button" onclick="updateBasket('dogman')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="captain">
+    <li id="captain" data-due="Due in 30 Days">
         <figure>
-            <a><img src="captainunderpants.jpg" alt="Captain Underpants" width="200" height ="250"/></a>
+            <a><img src="captain.jpg" alt="Captain Underpants" width="200" height ="250"/></a>
             <figcaption>Captain Underpants <button type="button" onclick="updateBasket('captain')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="beaver">
+    <li id="beaver" data-due="Due in 30 Days">
         <figure>
             <a><img src="beaver.jpg" alt="The Beaver Brothers and The Evil Penguin" width="200" height ="250"/></a>
             <figcaption>The Beaver Brothers and The Evil Penguin <button type="button" onclick="updateBasket('beaver')">Add</button></figcaption>
         </figure>
     </li>
-    <li id="owl">
+    <li id="owl" data-due="Due in 30 Days">
         <figure>
             <a><img src="owl.jpg" alt="The Owl Diaries Eva's Treetop Festival" width="200" height ="250"/></a>
             <figcaption>The Owl Diaries Eva's Treetop Festivaln <button type="button" onclick="updateBasket('owl')">Add</button></figcaption>

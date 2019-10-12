@@ -32,7 +32,32 @@ function subForm(){
     element.appendChild(h);
 }
 
-function updateBasket (item){
-    var node = document.getElementById(item);
-    document.getElementById("basket").appendChild(node); 
+function updateBasket(item){
+    var node = document.getElementById(item);//get the node of the item that was added to the cart
+    var image = node.getElementsByTagName("img")[0]; //get the img element
+    image.parentNode.removeChild(image); //remove the image element
+
+    var due = document.createElement("p"); //create a new pargraph node
+    due.innerHTML = node.getAttribute("data-due"); //get the data attribute containing the due date and add the string to the p node
+    node.appendChild(due);//append the p node to the parent item node
+
+    node.getElementsByTagName("button")[0].innerHTML = "Remove"; //change button text to remove
+    node.getElementsByTagName("button")[0].setAttribute("onclick", "remove(\""+ item + "\")"); //change onclick attribute to remove(item)
+    document.getElementById("basket").appendChild(node); //apend the edited item node to the basket list
+}
+
+function remove(item){
+    var node = document.getElementById(item); //get the items node
+    var image = document.createElement("img"); // create an img element
+    image.setAttribute("src", item +".jpg"); //add the file sorce to the image for the picture
+    image.setAttribute("width", "200");//add width attribute
+    image.setAttribute("height", "250");//add height attribute
+   
+    node.insertBefore(image, node.firstChild);
+    var due = node.getElementsByTagName("p")[0];
+    node.removeChild(due);
+
+    node.getElementsByTagName("button")[0].innerHTML = "Add"; //change button text back to add
+    node.getElementsByTagName("button")[0].setAttribute("onclick", "updateBasket(\""+ item + "\")"); //change onclick attribute back to updateBasket(item)
+    document.getElementById("available-items").appendChild(node); //put the removed item node back on the available-items list
 }
