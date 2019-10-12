@@ -88,3 +88,21 @@ function checkout() {
         return;
     }
 }
+
+function removeItem(){
+    var itemNum = document.getElementById("remove").value; //get the number of the book to be deleted from the input feild
+    var availableList = document.getElementById("available-items").getElementsByTagName("li"); // get a list of all li nodes in available-items list
+    var itemToDelete = availableList[itemNum-1]; //get the item to be deleted
+
+    itemToDelete.parentNode.removeChild(itemToDelete); //delete the item
+}
+
+function changeDate(){
+    var itemNum = document.getElementById("itemNum").value;
+    var newDate = document.getElementById("days").value;
+    var availableList = document.getElementById("available-items").getElementsByTagName("li");
+    var itemToChange = availableList[itemNum-1];
+
+    itemToChange.setAttribute("data-due", "Due in "+newDate+" Days");
+}
+

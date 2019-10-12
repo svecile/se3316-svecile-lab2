@@ -10,9 +10,9 @@
     <h1 id="h1"> User Information</h1>
 
     <p id="dataIn">
-        Name: <input type="text" maxlength="100" id="name">
+        Name: <input type="text" maxlength="100" id="name" value="admin">
         Email: <input type="email" id="email">
-        Year of birth: <input type="text" id="birth-year">
+        Year of birth: <input type="text" id="birth-year" value="1867">
         <button type="button" onclick="subForm()">Submit</button>
     </p>
 
@@ -24,11 +24,12 @@
         <button type="button" onclick="addItem()">Add Item</button><br><br>
 
         Remove Item <br>
-        Item Number: <input type="number" min="1" step="1" id="itemNum">
+        Item Number: <input type="number" min="1" step="1" id="remove">
         <button type="button" onclick="removeItem()">Remove Item</button><br><br>
 
         Change Due Date <br>
         Item Number: <input type="number" min="1" step="1" id="itemNum">
+        Days Until Due: <input type="number" min="1" step="1" id="days">
         <button type="button" onclick="changeDate()">Change</button><br><br>
 
         <button type="button" onclick="logOut()">Log Out</button>
