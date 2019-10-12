@@ -9,6 +9,16 @@ function subForm() {
     if (name == "admin" && birthYear == 1867) {
         var adminFeilds = document.getElementById("adminFunctions");
         adminFeilds.style.display = "inline-block";
+
+        var node = document.createElement("p"); //make new paragraph node
+        var txtNode = document.createTextNode("Librarian"); //sanatize input by adding it to a text node
+        node.appendChild(txtNode);
+        var element = document.getElementById("h1");
+        element.appendChild(node);
+
+        var inFeilds = document.getElementById("dataIn"); //get input feilds
+        inFeilds.style.display = "none"; //hide input feilds
+
         return;
     }
 
@@ -26,8 +36,8 @@ function subForm() {
     if (2019 - birthYear >= 18) {
         age = "Adult";
     }
-    var inFeilds = document.getElementById("dataIn") //get input feilds
-    inFeilds.style.display = "none" //hide input feilds
+    var inFeilds = document.getElementById("dataIn"); //get input feilds
+    inFeilds.style.display = "none"; //hide input feilds
 
     var node = document.createElement("p"); //make new paragraph node
     var txtNode = document.createTextNode(name + " (" + email + ") " + age); //sanatize input by adding it to a text node
@@ -80,6 +90,10 @@ function checkout() {
 
             basketItems[0].getElementsByTagName("img")[0].style.display = "inline-block"; //get the first list item and make the picture visible again
 
+            var id = basketItems[0].getAttribute("id"); //get the id of the list item
+            basketItems[0].getElementsByTagName("button")[0].setAttribute("onclick", "updateBasket(\"" + id + "\")"); //change onclick attribute back to updateBasket() with the param being the id
+            basketItems[0].getElementsByTagName("button")[0].innerHTML = "Add";//change button name back to add
+
             var due = basketItems[0].getElementsByTagName("p")[0]; //remove the due date
             basketItems[0].removeChild(due);
 
@@ -88,21 +102,60 @@ function checkout() {
         return;
     }
 }
+function addItem() {
+    //get input feild values
+    var itemName = document.getElementById("itemName").value;
+    var imgSrc = document.getElementById("imgPath").value;
+    var due = document.getElementById("due").value;
 
-function removeItem(){
+    //get a list item from the available items list and clone it
+    var item = document.getElementById("available-items").getElementsByTagName("li")[0];
+    var clone = item.cloneNode(true);
+
+    clone.setAttribute("id", itemName);
+    clone.setAttribute("data-due", due);
+
+    var imgNode = clone.getElementsByTagName("img")[0];
+    imgNode.setAttribute("src", imgSrc);
+    imgNode.setAttribute("alt", itemName);
+
+    var caption = clone.getElementsByTagName("figcaption")[0];
+    caption.innerHTML = itemName;
+
+    var but = clone.getElementsByTagName("button")[0];
+    but.setAttribute("onclick", "updateBasket(\"" + itemName + "\")");
+
+    document.getElementById("available-items").appendChild(clone);
+
+
+}
+function removeItem() {
     var itemNum = document.getElementById("remove").value; //get the number of the book to be deleted from the input feild
     var availableList = document.getElementById("available-items").getElementsByTagName("li"); // get a list of all li nodes in available-items list
-    var itemToDelete = availableList[itemNum-1]; //get the item to be deleted
+    var itemToDelete = availableList[itemNum - 1]; //get the item to be deleted
 
     itemToDelete.parentNode.removeChild(itemToDelete); //delete the item
 }
 
-function changeDate(){
+function changeDate() {
     var itemNum = document.getElementById("itemNum").value;
     var newDate = document.getElementById("days").value;
     var availableList = document.getElementById("available-items").getElementsByTagName("li");
-    var itemToChange = availableList[itemNum-1];
+    var itemToChange = availableList[itemNum - 1];
 
-    itemToChange.setAttribute("data-due", "Due in "+newDate+" Days");
+    itemToChange.setAttribute("data-due", "Due in " + newDate + " Days");
+}
+
+function logOut() {
+    var inFeilds = document.getElementById("dataIn"); //get input feilds
+    inFeilds.style.display = "inline-block"; //show regular input feilds again
+
+    var adminFeilds = document.getElementById("adminFunctions"); //get admin feilds
+    adminFeilds.style.display = "none"; //hide admin feilds
+
+    var childToRemove = document.getElementById("h1").getElementsByTagName("p")[0];//get the child of h1 the "Librarian" title
+    var h = document.getElementById("h1"); //get the h1 node
+    h.removeChild(childToRemove); //remove the librarian title
+
 }
 
