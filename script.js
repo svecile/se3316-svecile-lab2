@@ -7,8 +7,11 @@ function subForm() {
     birthYear = parseInt(birthYear);
 
     if (name == "admin" && birthYear == 1867) {
-
+        var adminFeilds = document.getElementById("adminFunctions");
+        adminFeilds.style.display = "inline-block";
+        return;
     }
+
     if (name == "" || email == "") {
         window.alert("Please enter a value for all feilds!");
         return;

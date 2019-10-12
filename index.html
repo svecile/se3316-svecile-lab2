@@ -15,8 +15,23 @@
         Year of birth: <input type="text" id="birth-year">
         <button type="button" onclick="subForm()">Submit</button>
     </p>
+
     <p id="adminFunctions" style="display: none;">
-        Add Item <br>
+        Add Item <br> 
+        Name: <input type="text" maxlength="100" id="itemName">
+        Image Sorce: <input type="text" maxlength="200" id="imgPath">
+        Length of Rental: <input type="number" min="1" step="1" id="due"> 
+        <button type="button" onclick="addItem()">Add Item</button><br><br>
+
+        Remove Item <br>
+        Item Number: <input type="number" min="1" step="1" id="itemNum">
+        <button type="button" onclick="removeItem()">Remove Item</button><br><br>
+
+        Change Due Date <br>
+        Item Number: <input type="number" min="1" step="1" id="itemNum">
+        <button type="button" onclick="changeDate()">Change</button><br><br>
+
+        <button type="button" onclick="logOut()">Log Out</button>
     </p>
 
     <h1>Library Checkout</h1>
