@@ -78,6 +78,7 @@ function updateBasket(item) {
     document.getElementById("basket").appendChild(node); //apend the edited item node to the basket list
 }
 
+//function to translate english to french
 function translateFr() {
 
     var availableList = document.getElementById("available-items").getElementsByTagName("li"); //get the list of available items
@@ -159,6 +160,7 @@ function translateFr() {
     document.getElementById("transBtn").setAttribute("onclick", "translateEn()"); //change onclick attribute to translateEn()
 }
 
+//function to translate french back to english
 function translateEn() {
 
     var availableList = document.getElementById("available-items").getElementsByTagName("li"); //get the list of available items
