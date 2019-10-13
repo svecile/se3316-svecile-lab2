@@ -78,6 +78,167 @@ function updateBasket(item) {
     document.getElementById("basket").appendChild(node); //apend the edited item node to the basket list
 }
 
+function translateFr() {
+
+    var availableList = document.getElementById("available-items").getElementsByTagName("li"); //get the list of available items
+
+    //translate the names of the available items
+    for (var e of availableList) {//for each li node in availablelist
+
+        var id = e.getAttribute("id");//get the id of the node
+        var caption = e.getElementsByTagName("figcaption")[0];
+
+        //call translate function
+        trans(id);
+    }
+
+    var basketList = document.getElementById("basket").getElementsByTagName("li"); //get the list of basket items
+    
+    //translate the names of the items in the checkout basket
+    for (var e of basketList) {//for each li node in basketlist
+
+        var id = e.getAttribute("id");//get the id of the node
+        var caption = e.getElementsByTagName("figcaption")[0];
+
+        //call translate function
+        trans(id);
+    }
+
+    //embeded function to store the switch statement so it doesnt have to be written twice
+    function trans(item){
+
+           //using the id to tell what book you are translating change the caption
+           switch (id) {
+            
+            case "clif":
+                caption.innerHTML = "Clifford le Grand Chien Rouge"
+                break;
+            
+            case "anarchist":
+                caption.innerHTML = "Le livre de cuisine anarchiste"
+                break;
+
+            case "java":
+                caption.innerHTML = "Développement mobile HTML, CSS et Javascript pour DUMMIES"
+                break;
+            
+            case "poo":
+                caption.innerHTML = "Qu'est-ce que votre caca vous dit?"
+                break;
+            
+            case "green":
+                caption.innerHTML = "American Idiot par Green Day"
+                break;
+
+            case "dillon":
+                caption.innerHTML = "This Mixtape Is Fire de Dillon Francis"
+                break;
+            
+            case "dogman":
+                caption.innerHTML = "Chien homme"
+                break;
+
+            case "captain":
+                caption.innerHTML = "Sous-vêtement capitaine"
+                break;
+
+            case "beaver":
+                caption.innerHTML = "Les frères Beaver et le mauvais pingouin"
+                break;
+
+            case "owl":
+                caption.innerHTML = "Eva's Treetop Festival, le journal de la chouette"
+                break;
+
+            case "Atonement":
+                caption.innerHTML = "Expiation"
+                break;
+        }
+    }
+    document.getElementById("transBtn").innerHTML = "Translate to English"; //change button text to Tanslate to english
+    document.getElementById("transBtn").setAttribute("onclick", "translateEn()"); //change onclick attribute to translateEn()
+}
+
+function translateEn() {
+
+    var availableList = document.getElementById("available-items").getElementsByTagName("li"); //get the list of available items
+
+    //translate the names of the available items
+    for (var e of availableList) {//for each li node in availablelist
+
+        var id = e.getAttribute("id");//get the id of the node
+        var caption = e.getElementsByTagName("figcaption")[0];
+
+        //call translate function
+        trans(id);
+    }
+
+    var basketList = document.getElementById("basket").getElementsByTagName("li"); //get the list of basket items
+    
+    //translate the names of the items in the checkout basket
+    for (var e of basketList) {//for each li node in basketlist
+
+        var id = e.getAttribute("id");//get the id of the node
+        var caption = e.getElementsByTagName("figcaption")[0];
+
+        //call translate function
+        trans(id);
+    }
+
+    function trans(item){
+
+        //using the id to tell what book you are translating change the caption
+        switch (id) {
+            
+            case "clif":
+                caption.innerHTML = "Clifford The Big Red Dog"
+                break;
+            
+            case "anarchist":
+                caption.innerHTML = "The Anarchist Cookbook"
+                break;
+
+            case "java":
+                caption.innerHTML = "HTML, CSS & Javascript Mobile Devlopment for DUMMIES"
+                break;
+            
+            case "poo":
+                caption.innerHTML = "What's Your Poo Telling You?"
+                break;
+            
+            case "green":
+                caption.innerHTML = "American Idiot by Green Day"
+                break;
+
+            case "dillon":
+                caption.innerHTML = "This Mixtape Is Fire by Dillon Francis"
+                break;
+            
+            case "dogman":
+                caption.innerHTML = "Dog Man"
+                break;
+
+            case "captain":
+                caption.innerHTML = "Captain Underpants"
+                break;
+
+            case "beaver":
+                caption.innerHTML = "The Beaver Brothers and The Evil Penguin"
+                break;
+
+            case "owl":
+                caption.innerHTML = "The Owl Diaries Eva's Treetop Festival"
+                break;
+
+            case "Atonement":
+                caption.innerHTML = "Atonement"
+                break;
+        }
+    }
+    document.getElementById("transBtn").innerHTML = "Translate to English"; //change button text to Tanslate to french
+    document.getElementById("transBtn").setAttribute("onclick", "translateFr()"); //change onclick attribute to translateFr()
+}
+
 //function to remove item from the basket and place it back in the avaliable list
 function remove(item) {
 
